@@ -128,11 +128,15 @@ class HomeViewController: CoreDataTableViewController,HomeProtocol {
         
         if let url = contact.profilePic as String?
         {
-            if url != ""
+            if url != "" && url != "/images/missing.png"
             {
                 cell.profilePic.kf.indicatorType = .activity
                 let profileURL = URL(string: url)!
                 cell.profilePic.kf.setImage(with: profileURL)
+            }
+            else
+            {
+                cell.profilePic.image = #imageLiteral(resourceName: "contactPlaceholder")
             }
         }
     }
