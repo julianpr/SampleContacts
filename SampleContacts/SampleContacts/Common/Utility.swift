@@ -14,4 +14,12 @@ class Utility {
         let viewController = storyboard.instantiateViewController(withIdentifier: identifier)
         return viewController
     }
+    
+    static func circleImage(image:UIImageView) {
+        image.layer.borderWidth = 1
+        image.layer.masksToBounds = false
+        image.layer.borderColor = UIColor.white.cgColor
+        image.layer.cornerRadius = image.frame.width/2
+        image.clipsToBounds = true
+    }
 }

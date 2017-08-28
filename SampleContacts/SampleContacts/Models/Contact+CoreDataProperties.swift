@@ -23,5 +23,17 @@ extension Contact {
     @NSManaged public var phone: String?
     @NSManaged public var profilePic: String?
     @NSManaged public var id: Int32
+    var lastNameInitial: String {
+        get {
+            let index = self.lastName?.index((self.lastName?.startIndex)!, offsetBy: 1)
+            let initial = self.lastName?.substring(to: index!)
+            let num = Int(initial!)
+            if (num != nil)
+            {
+                return "#"
+            }
+            return initial!
+        }
+    }
 
 }

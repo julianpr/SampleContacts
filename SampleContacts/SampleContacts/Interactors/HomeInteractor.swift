@@ -62,8 +62,8 @@ class HomeInteractor:HomeInteractorInputProtocol {
                 //find or create
                 if let newContact = Contact.firstOrCreate(with: "id", value: id) as Contact?
                 {
-                    newContact.firstName = firstName
-                    newContact.lastName = lastName
+                    newContact.firstName = firstName.trimmingCharacters(in: .whitespacesAndNewlines).capitalized
+                    newContact.lastName = lastName.trimmingCharacters(in: .whitespacesAndNewlines).capitalized
                     newContact.profilePic = profilePic
                     newContact.favorite = favorite
                     

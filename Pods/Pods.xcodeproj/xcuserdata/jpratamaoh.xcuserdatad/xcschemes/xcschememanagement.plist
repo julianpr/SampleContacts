@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AECoreDataUI.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AERecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>333DFDD18A706D173BC5317DDD803AF6</key>
+		<key>320E199DC83FA1CA75B917273120F966</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A8A1E2BC19812B2B0EBFB9BE11C1A2AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9CE0A3A8FD454A6ABCC36CED71BD309</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F185047356E5CEC71627E5A518383BF6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F1AD69819EE1DC4B02C8027061592A06</key>
+		<key>F2E23AE1D282890E104CA6AD20E444D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

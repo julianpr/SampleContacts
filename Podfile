@@ -11,6 +11,7 @@ inhibit_all_warnings!
 def all_pods
     pod 'Networking', '~> 3'
     pod 'AERecord'
+    pod 'AECoreDataUI'
     pod 'Kingfisher', '~> 3.0'
 end
 
