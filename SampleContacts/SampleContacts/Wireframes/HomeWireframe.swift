@@ -28,8 +28,11 @@ class HomeWireframe: HomeWireframeProtocol
         interactor.presenter = presenter
         self.window = window
         
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
+        
         //Navigating
-        rootWireframe?.present(rootViewController: viewController, in: window)
+        rootWireframe?.present(rootViewController: navigationController, in: window)
         
     }
     

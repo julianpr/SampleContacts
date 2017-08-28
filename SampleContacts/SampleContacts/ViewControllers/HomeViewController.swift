@@ -14,6 +14,7 @@ class HomeViewController: UITableViewController, NSFetchedResultsControllerDeleg
     var contactDetailViewController: ContactDetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     var presenter: HomePresenterProtocol?
+    var indexOfLetters = [String]()
 
 
 
@@ -22,12 +23,13 @@ class HomeViewController: UITableViewController, NSFetchedResultsControllerDeleg
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
         presenter?.updateView()
-
+        var allLetters = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z #"
+        indexOfLetters = allLetters.components(separatedBy: " ")
 
     }
     
     func endRefreshing() {
-        self.endRefreshing()
+        self.refreshControl?.endRefreshing()
     }
     
     func display(contacts: [Contact]) {
@@ -68,7 +70,7 @@ class HomeViewController: UITableViewController, NSFetchedResultsControllerDeleg
     // MARK: - Table View
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return indexOfLetters.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,6 +102,15 @@ class HomeViewController: UITableViewController, NSFetchedResultsControllerDeleg
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return indexOfLetters
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        let temp = indexOfLetters as NSArray
+        return temp.index(of: title)
     }
 
     func configureCell(_ cell: UITableViewCell, withEvent event: Event) {
@@ -174,15 +185,6 @@ class HomeViewController: UITableViewController, NSFetchedResultsControllerDeleg
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
-
-    /*
-     // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
-     
-     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-         // In the simplest, most efficient, case, reload the table view.
-         tableView.reloadData()
-     }
-     */
 
 }
 

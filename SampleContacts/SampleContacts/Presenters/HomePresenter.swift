@@ -28,13 +28,20 @@ class HomePresenter:HomePresenterProtocol, HomeInteractorOutputProtocol {
     
     func display(errorMessage: String) {
         view?.endRefreshing()
+        view?.display(errorMessage: errorMessage)
         
     }
     
     func populatingContacts(contacts: [Contact])
     {
-        contactsFound = contacts
+        self.sortContacts(contacts:contacts)
         self.display()
+    }
+    
+    private func sortContacts(contacts: [Contact])
+    {
+        let sortedContacts = contacts.sorted { $0.lastName ?? "" < $1.lastName ?? "" }
+        contactsFound = sortedContacts
     }
     
     

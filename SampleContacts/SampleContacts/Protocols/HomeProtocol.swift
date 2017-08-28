@@ -33,6 +33,8 @@ protocol HomeInteractorInputProtocol: class
     var presenter: HomeInteractorOutputProtocol? { get set }    
     func saveContacts(jsonArray: [[String:Any]])
     func populateContacts()
+    func getContacts()
+
 }
 
 protocol HomeInteractorOutputProtocol: class

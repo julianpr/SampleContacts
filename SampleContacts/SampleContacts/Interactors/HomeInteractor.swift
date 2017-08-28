@@ -14,6 +14,7 @@ import AERecord
 class HomeInteractor:HomeInteractorInputProtocol {
     
     weak var presenter: HomeInteractorOutputProtocol?
+    private var contacts = [Contact]()
     
     func populateContacts() {
         let networking = Networking(baseURL: "http://gojek-contacts-app.herokuapp.com/contacts")
@@ -23,22 +24,31 @@ class HomeInteractor:HomeInteractorInputProtocol {
                 if let json = response.json as JSON?,
                 let jsonArray = json.array as [[String:Any]]?
                 {
-                    print(jsonArray)
                     self.saveContacts(jsonArray: jsonArray)
-                    presenter?.populatingContacts(contacts: <#T##[Contact]#>)
+                    self.presenter?.populatingContacts(contacts: self.contacts)
                 }
                 
                 
                 
             case .failure(let response):
                 print(response)
-                self.presenter?.display(errorMessage: "Failed to get contacts. Please check your connection.")
+//                self.presenter?.display(errorMessage: "Failed to get contacts. Please check your connection.")
             }
+        }
+    }
+    
+    func getContacts()
+    {
+        if let getContacts = Contact.all() as [Contact]?
+        {
+            contacts = getContacts
+            self.presenter?.populatingContacts(contacts: contacts)
         }
     }
     
     func saveContacts(jsonArray: [[String:Any]])
     {
+        var result = [Contact]()
         
         for element in jsonArray
         {
@@ -57,6 +67,7 @@ class HomeInteractor:HomeInteractorInputProtocol {
                     newContact.profilePic = profilePic
                     newContact.favorite = favorite
                     
+                    result.append(newContact)
                 }
                 else
                 {
@@ -65,14 +76,8 @@ class HomeInteractor:HomeInteractorInputProtocol {
                 
             }
         }
+        contacts = result
         AERecord.saveAndWait()
-    }
-    
-    func sortContacts()
-    {
-        let result = [Contact]()
-        
-        Contact.all(orderedBy: <#T##[NSSortDescriptor]?#>)
     }
     
     

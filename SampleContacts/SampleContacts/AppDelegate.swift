@@ -11,18 +11,19 @@ import CoreData
 import AERecord
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.installRootViewController(in: window!)
         do {
             try AERecord.loadCoreDataStack()
         } catch {
             print(error)
         }
+        self.installRootViewController(in: window!)
+
         return true
     }
     
