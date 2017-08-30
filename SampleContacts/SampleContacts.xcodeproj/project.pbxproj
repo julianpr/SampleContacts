@@ -41,6 +41,17 @@
 		70AC0DB01F53F3EB00B39205 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DAE1F53F3EB00B39205 /* ContactDetailViewController.swift */; };
 		70AC0DB11F53F3EB00B39205 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DAF1F53F3EB00B39205 /* HomeViewController.swift */; };
 		70AC0DB31F53F40600B39205 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DB21F53F40600B39205 /* HomeCell.swift */; };
+		70AC0DB51F541ABE00B39205 /* ContactDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DB41F541ABE00B39205 /* ContactDetailWireframe.swift */; };
+		70AC0DB71F541CAA00B39205 /* ContactDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DB61F541CAA00B39205 /* ContactDetailPresenter.swift */; };
+		70AC0DB91F541CB600B39205 /* ContactDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DB81F541CB600B39205 /* ContactDetailInteractor.swift */; };
+		70AC0DBB1F555A6C00B39205 /* ContactDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DBA1F555A6C00B39205 /* ContactDetailCell.swift */; };
+		70AC0DBD1F55753400B39205 /* EditDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DBC1F55753400B39205 /* EditDetailProtocol.swift */; };
+		70AC0DBF1F5575B100B39205 /* EditDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DBE1F5575B100B39205 /* EditDetailWireframe.swift */; };
+		70AC0DC11F55768F00B39205 /* EditDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DC01F55768F00B39205 /* EditDetailInteractor.swift */; };
+		70AC0DC31F55769C00B39205 /* EditDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DC21F55769C00B39205 /* EditDetailPresenter.swift */; };
+		70AC0DC51F5576A700B39205 /* EditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DC41F5576A700B39205 /* EditDetailViewController.swift */; };
+		70AC0DC71F5576B200B39205 /* EditDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DC61F5576B200B39205 /* EditDetailCell.swift */; };
+		70AC0DC91F56BE9800B39205 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AC0DC81F56BE9800B39205 /* HomeViewControllerTests.swift */; };
 		787433632DCDEAD6DB2A5082 /* Pods_SampleContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB171A601B9E6BB2B06C0698 /* Pods_SampleContacts.framework */; };
 		A86CC962420CF63A83242E9F /* Pods_SampleContactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19AB1084934A795B2A44662 /* Pods_SampleContactsTests.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +117,17 @@
 		70AC0DAE1F53F3EB00B39205 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		70AC0DAF1F53F3EB00B39205 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		70AC0DB21F53F40600B39205 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		70AC0DB41F541ABE00B39205 /* ContactDetailWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailWireframe.swift; sourceTree = "<group>"; };
+		70AC0DB61F541CAA00B39205 /* ContactDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailPresenter.swift; sourceTree = "<group>"; };
+		70AC0DB81F541CB600B39205 /* ContactDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailInteractor.swift; sourceTree = "<group>"; };
+		70AC0DBA1F555A6C00B39205 /* ContactDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailCell.swift; sourceTree = "<group>"; };
+		70AC0DBC1F55753400B39205 /* EditDetailProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDetailProtocol.swift; sourceTree = "<group>"; };
+		70AC0DBE1F5575B100B39205 /* EditDetailWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDetailWireframe.swift; sourceTree = "<group>"; };
+		70AC0DC01F55768F00B39205 /* EditDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditDetailInteractor.swift; path = Interactors/EditDetailInteractor.swift; sourceTree = "<group>"; };
+		70AC0DC21F55769C00B39205 /* EditDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDetailPresenter.swift; sourceTree = "<group>"; };
+		70AC0DC41F5576A700B39205 /* EditDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDetailViewController.swift; sourceTree = "<group>"; };
+		70AC0DC61F5576B200B39205 /* EditDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDetailCell.swift; sourceTree = "<group>"; };
+		70AC0DC81F56BE9800B39205 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		8C5315AF9F0B73576B14168D /* Pods-SampleContactsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleContactsTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SampleContactsTests/Pods-SampleContactsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B19AB1084934A795B2A44662 /* Pods_SampleContactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleContactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AA025DB2787BAA552B21B6 /* Pods-SampleContactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleContactsTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SampleContactsTests/Pods-SampleContactsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +234,7 @@
 			children = (
 				70AC0D311F4D76D300B39205 /* SampleContactsTests.swift */,
 				70AC0D331F4D76D300B39205 /* Info.plist */,
+				70AC0DC81F56BE9800B39205 /* HomeViewControllerTests.swift */,
 			);
 			path = SampleContactsTests;
 			sourceTree = "<group>";
@@ -239,6 +262,7 @@
 			children = (
 				70AC0D591F501A1A00B39205 /* HomeProtocol.swift */,
 				70AC0D5B1F501A2900B39205 /* ContactDetailViewProtocol.swift */,
+				70AC0DBC1F55753400B39205 /* EditDetailProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -247,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				70AC0D5E1F501AE700B39205 /* HomePresenter.swift */,
+				70AC0DB61F541CAA00B39205 /* ContactDetailPresenter.swift */,
+				70AC0DC21F55769C00B39205 /* EditDetailPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -255,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				70AC0D6B1F53D0CA00B39205 /* HomeInteractor.swift */,
+				70AC0DB81F541CB600B39205 /* ContactDetailInteractor.swift */,
+				70AC0DC01F55768F00B39205 /* EditDetailInteractor.swift */,
 			);
 			name = Interactors;
 			sourceTree = "<group>";
@@ -264,6 +292,8 @@
 			children = (
 				70AC0D641F53C26400B39205 /* RootWireframe.swift */,
 				70AC0D661F53C2D600B39205 /* HomeWireframe.swift */,
+				70AC0DB41F541ABE00B39205 /* ContactDetailWireframe.swift */,
+				70AC0DBE1F5575B100B39205 /* EditDetailWireframe.swift */,
 			);
 			path = Wireframes;
 			sourceTree = "<group>";
@@ -311,6 +341,7 @@
 				70AC0DAD1F53F3EB00B39205 /* Cells */,
 				70AC0DAE1F53F3EB00B39205 /* ContactDetailViewController.swift */,
 				70AC0DAF1F53F3EB00B39205 /* HomeViewController.swift */,
+				70AC0DC41F5576A700B39205 /* EditDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -319,6 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				70AC0DB21F53F40600B39205 /* HomeCell.swift */,
+				70AC0DBA1F555A6C00B39205 /* ContactDetailCell.swift */,
+				70AC0DC61F5576B200B39205 /* EditDetailCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -658,19 +691,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				70AC0D571F4D7F3600B39205 /* Contact+CoreDataProperties.swift in Sources */,
+				70AC0DC51F5576A700B39205 /* EditDetailViewController.swift in Sources */,
 				70AC0D1B1F4D76D300B39205 /* SampleContacts.xcdatamodeld in Sources */,
 				70AC0D181F4D76D300B39205 /* AppDelegate.swift in Sources */,
 				70AC0D671F53C2D600B39205 /* HomeWireframe.swift in Sources */,
 				70AC0D5F1F501AE700B39205 /* HomePresenter.swift in Sources */,
+				70AC0DBB1F555A6C00B39205 /* ContactDetailCell.swift in Sources */,
 				70AC0D6A1F53C37400B39205 /* Utility.swift in Sources */,
+				70AC0DB91F541CB600B39205 /* ContactDetailInteractor.swift in Sources */,
+				70AC0DB51F541ABE00B39205 /* ContactDetailWireframe.swift in Sources */,
+				70AC0DBD1F55753400B39205 /* EditDetailProtocol.swift in Sources */,
+				70AC0DC11F55768F00B39205 /* EditDetailInteractor.swift in Sources */,
 				70AC0D5A1F501A1A00B39205 /* HomeProtocol.swift in Sources */,
 				70AC0D5C1F501A2900B39205 /* ContactDetailViewProtocol.swift in Sources */,
 				70AC0DB31F53F40600B39205 /* HomeCell.swift in Sources */,
 				70AC0D561F4D7F3600B39205 /* Contact+CoreDataClass.swift in Sources */,
+				70AC0DC71F5576B200B39205 /* EditDetailCell.swift in Sources */,
+				70AC0DC31F55769C00B39205 /* EditDetailPresenter.swift in Sources */,
 				70AC0D651F53C26400B39205 /* RootWireframe.swift in Sources */,
 				70AC0DB01F53F3EB00B39205 /* ContactDetailViewController.swift in Sources */,
 				70AC0DB11F53F3EB00B39205 /* HomeViewController.swift in Sources */,
+				70AC0DB71F541CAA00B39205 /* ContactDetailPresenter.swift in Sources */,
 				70AC0D6C1F53D0CA00B39205 /* HomeInteractor.swift in Sources */,
+				70AC0DBF1F5575B100B39205 /* EditDetailWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +722,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70AC0D321F4D76D300B39205 /* SampleContactsTests.swift in Sources */,
+				70AC0DC91F56BE9800B39205 /* HomeViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

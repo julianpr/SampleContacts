@@ -61,6 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AERecord.save()
     }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+    return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.portrait.rawValue)
+    }
 
     // MARK: - Core Data stack
 

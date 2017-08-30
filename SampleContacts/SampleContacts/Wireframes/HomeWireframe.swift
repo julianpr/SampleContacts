@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import AERecord
 
 class HomeWireframe: HomeWireframeProtocol
 {
     var rootWireframe: RootWireframe?
     weak fileprivate var window: UIWindow?
+    private var navigationController: UINavigationController?
+
 
     func presentHomeInterface(in window: UIWindow)
     {
@@ -36,10 +39,24 @@ class HomeWireframe: HomeWireframeProtocol
         
     }
     
+    func presentEditDetailInterface(navigationController: UINavigationController, addFlag: Bool)
+    {
+        EditDetailWireframe.presentEditDetailInterface(in: navigationController, addFlag: true)
+        
+    }
+    
+    func presentContactDetailInterface(navigationController: UINavigationController, contact: Contact)
+    {
+        ContactDetailWireframe.presentContactDetailInterface(in: navigationController, contact: contact)
+
+    }
+    
     fileprivate func homeViewControllerFromStoryboard() -> HomeViewController
     {
         let viewController = Utility.viewControllerByIdentifier("HomeViewController")
         return viewController as! HomeViewController
     }
+    
+    
 
 }

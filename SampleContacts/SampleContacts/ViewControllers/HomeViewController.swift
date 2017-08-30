@@ -14,19 +14,28 @@ import Kingfisher
 
 class HomeViewController: CoreDataTableViewController,HomeProtocol {
 
-    var contactDetailViewController: ContactDetailViewController? = nil
-    var managedObjectContext: NSManagedObjectContext? = nil
     var presenter: HomePresenterProtocol?
-    var indexOfLetters = [String]()
 
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(HomeViewController.addAction))
+        navigationItem.rightBarButtonItem = addButton
+        navigationController?.navigationBar.tintColor = UIColor(red: 80.0 / 255.0, green: 227.0 / 255.0, blue: 194.0 / 255.0, alpha: 1)
+
+        
         // Do any additional setup after loading the view, typically from a nib.
         presenter?.updateView()
         refreshData()
 
+    }
+    
+    func addAction()
+    {
+        presenter?.addAction(navigationController: self.navigationController!, addFlag: true)
     }
     
     func refreshData()
@@ -40,10 +49,6 @@ class HomeViewController: CoreDataTableViewController,HomeProtocol {
     
     func endRefreshing() {
         self.refreshControl?.endRefreshing()
-    }
-    
-    func display(contacts: [Contact]) {
-        
     }
     
     func display(errorMessage: String) {
@@ -62,23 +67,17 @@ class HomeViewController: CoreDataTableViewController,HomeProtocol {
         // Dispose of any resources that can be recreated.
     }
 
-
-    // MARK: - Segues
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-            let object = fetchedResultsController?.object(at: indexPath)
-                let controller = (segue.destination as! UINavigationController).topViewController as! ContactDetailViewController
-                controller.detailItem = object as? Event
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
+    // MARK: - Table View
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let frc = fetchedResultsController,
+            let object = frc.object(at: indexPath) as? Contact
+        {
+            presenter?.openDetails(navigationController: self.navigationController!, contact: object)
         }
     }
-
-    // MARK: - Table View
-
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController!.sections!.count
     }
@@ -101,12 +100,6 @@ class HomeViewController: CoreDataTableViewController,HomeProtocol {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
-    }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-        }
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {

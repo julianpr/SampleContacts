@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AERecord
 
 protocol HomeProtocol: class
 {
@@ -15,17 +16,18 @@ protocol HomeProtocol: class
     
     func display(errorMessage: String)
     func endRefreshing()
-    func display(contacts: [Contact])
 }
 
 protocol HomePresenterProtocol: class
 {
     weak var view: HomeProtocol? { get set }
     var wireframe: HomeWireframeProtocol? { get set }
-
     var interactor: HomeInteractorInputProtocol? { get set }
+    
     func updateView()
-    func display()
+    func openDetails(navigationController: UINavigationController,contact: Contact)
+    func addAction(navigationController: UINavigationController, addFlag: Bool)
+
 }
 
 protocol HomeInteractorInputProtocol: class
@@ -39,11 +41,13 @@ protocol HomeInteractorInputProtocol: class
 
 protocol HomeInteractorOutputProtocol: class
 {
-    func populatingContacts(contacts: [Contact])
     func display(errorMessage: String)
 }
 
 protocol HomeWireframeProtocol: class
 {
     func presentHomeInterface(in window: UIWindow)
+    func presentContactDetailInterface(navigationController: UINavigationController,contact: Contact)
+    func presentEditDetailInterface(navigationController: UINavigationController, addFlag: Bool)
+
 }

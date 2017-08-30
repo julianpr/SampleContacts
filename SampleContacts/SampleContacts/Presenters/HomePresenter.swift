@@ -7,42 +7,36 @@
 //
 
 import Foundation
+import UIKit
 
 class HomePresenter:HomePresenterProtocol, HomeInteractorOutputProtocol {
     var interactor: HomeInteractorInputProtocol?
     weak var view: HomeProtocol?
-    private var contactsFound = [Contact]()
     var wireframe: HomeWireframeProtocol?
 
+    func addAction(navigationController: UINavigationController, addFlag: Bool) {
+        wireframe?.presentEditDetailInterface(navigationController: navigationController, addFlag: true)
+    }
+    
     
     func updateView()
     {
         interactor?.populateContacts()
     }
     
-    func display()
-    {
-        view?.endRefreshing()
-        view?.display(contacts: contactsFound)
-    }
-    
+   
     func display(errorMessage: String) {
         view?.endRefreshing()
         view?.display(errorMessage: errorMessage)
         
     }
     
-    func populatingContacts(contacts: [Contact])
+    func openDetails(navigationController: UINavigationController,contact: Contact)
     {
-        self.sortContacts(contacts:contacts)
-        self.display()
+        wireframe?.presentContactDetailInterface(navigationController: navigationController, contact: contact)
     }
-    
-    private func sortContacts(contacts: [Contact])
-    {
-        let sortedContacts = contacts.sorted { $0.lastName ?? "" < $1.lastName ?? "" }
-        contactsFound = sortedContacts
-    }
+
+   
     
     
     

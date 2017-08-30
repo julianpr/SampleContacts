@@ -25,7 +25,6 @@ class HomeInteractor:HomeInteractorInputProtocol {
                 let jsonArray = json.array as [[String:Any]]?
                 {
                     self.saveContacts(jsonArray: jsonArray)
-                    self.presenter?.populatingContacts(contacts: self.contacts)
                 }
                 
                 
@@ -42,7 +41,6 @@ class HomeInteractor:HomeInteractorInputProtocol {
         if let getContacts = Contact.all() as [Contact]?
         {
             contacts = getContacts
-            self.presenter?.populatingContacts(contacts: contacts)
         }
     }
     
